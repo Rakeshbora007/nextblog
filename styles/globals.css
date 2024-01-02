@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main2 {
+  margin: 0 auto;
+  background-color: #1d3208;
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 7px;
+  }
+}
+
+
+.tox-statusbar {
+  display: none !important;
+}

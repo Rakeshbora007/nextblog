@@ -1,0 +1,26 @@
+import PickerCard from '@components/common/PickerCard'
+import Title from '@components/common/Title'
+import React from 'react'
+
+const getData = async (search) => {
+  console.log(search)
+  const res = await fetch(`http://localhost:3000/api/posts?search=${search}`, {
+    cache: 'no-store'
+  })
+  if (!res.ok) {
+    throw new Error('failed to fetch data')
+  }
+  return res.json()
+}
+
+const SearchedPosts = async ({ searchParams }) => {
+  const { posts } = await getData(searchParams.search)
+  return (
+        <div className='main '>
+            <Title heading={`Search Results for "${searchParams.search}"`} />
+            <PickerCard posts={posts} styles='w-[302px] h-[223px]' fonttext={'text-[24px]'} categorytext={'text-[16px]'}/>
+        </div>
+  )
+}
+
+export default SearchedPosts
