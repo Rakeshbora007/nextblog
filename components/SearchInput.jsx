@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
 import search from '../images/searchicon.png'
 import Image from 'next/image'
 import SearchData from './SearchData'
@@ -15,7 +14,7 @@ const SearchInput = () => {
   return (
         <>
             <div className="relative">
-                <motion.div
+                <div
                     className={'bg-[#AFE67F] w-[44px] h-[44px] rounded-full flex justify-center items-center md:flex max-sm:hidden cursor-pointer'}
                     onClick={toggleInput}
                     initial={{ opacity: 0 }}
@@ -30,7 +29,7 @@ const SearchInput = () => {
                         height={17}
                         width={17}
                     />
-                </motion.div>
+                </div>
                 {isInputVisible && (
                     <div className='flex-col flex'>
                         <input

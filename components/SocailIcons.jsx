@@ -8,11 +8,11 @@ import Image from 'next/image'
 const SocailIcons = ({ border }) => {
   return (
 
-        <div className={'flex gap-6 max-sm:gap-2'}>
+        <div className={'flex gap-6 max-sm:gap-3'}>
             {[fb, twitts, insta, linkdin].map((e, index) => (
 
                 <div key={index} className={`${border}`}>
-                    <div className='relative w-[24px] h-[24px] max-sm:w-[12px] max-sm:h-[12px]'>
+                    <div className='relative w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]'>
                         <Image alt='hgasdjh' src={e} fill priority />
                     </div>
 

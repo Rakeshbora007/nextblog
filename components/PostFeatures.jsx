@@ -10,7 +10,7 @@ const PostFeatures = ({ image, blackcolor, date }) => {
   const imageSource = image ? calendar : tag
   const imageSource2 = image ? calendar2 : tag2
   return (
-        <div className="flex gap-3 max-md:gap-3 justify-center items-center">
+        <div className="flex gap-3 max-md:gap-2 justify-center items-center">
             <div className="relative w-[30px] h-[30px] max-sm:w-3 max-sm:h-3">
                 <Image
                     alt="iconimage"
@@ -20,7 +20,7 @@ const PostFeatures = ({ image, blackcolor, date }) => {
                     sizes="(min-width: 640px) 25px, 16px"
                 />
             </div>
-            <span className="max-md:text-[12px] xl:text-[18px]">
+            <span className="max-md:text-[9px] xl:text-[18px]">
                 {image ? <DateFormatter createdDate={date} /> : 'Featured'}
             </span>
         </div>

@@ -13,8 +13,7 @@ import menu from '../images/menu.png'
 import SocailIcons from './SocailIcons'
 import SearchInput from './SearchInput'
 
-const Navbar = ({ searchParams }) => {
-  console.log(searchParams)
+const Navbar = () => {
   const [show, setShow] = useState(false)
   const session = useSession()
   const router = useRouter()
@@ -35,6 +34,7 @@ const Navbar = ({ searchParams }) => {
       dependencies: [session?.data?.id, router]
     }
   )
+
   const urltext = path.split('/').pop()
   const color = ['signup', 'login', 'resetpassword', 'write', 'contactus', 'register', 'settings']
   const imageUrl = color.includes(urltext) ? images2 : images
@@ -55,14 +55,14 @@ const Navbar = ({ searchParams }) => {
     >
       <div className="main w-full">
         <div className="flex items-center  justify-between w-full">
-          <div className="flex bg-[#AFE67F] w-[223px] max-[600px]:w-[110px]  max-[600px]:h-[30px] max-sm:w-[180px] h-[44px] justify-center items-center rounded-full">
+          <div className="flex bg-[#AFE67F] w-[223px] max-[600px]:w-[130px]  max-[600px]:h-[30px] max-sm:w-[180px] h-[44px] justify-center items-center rounded-full">
             <SocailIcons />
           </div>
           <div className="flex flex-col">
             <Image src={imageUrl} alt="logo" priority height={40} width={40} />
             <span
-              className={`text-[48px] font-bold text-[${color.includes(urltext) ? '#AFE67F' : '#1D3208'
-                }] h-[58px] flex relative  max-[600px]:text-[26px] bottom-2 uppercase`}
+              className={`text-[48px]   max-md:text-[25px] font-bold text-[${color.includes(urltext) ? '#AFE67F' : '#1D3208'
+                }] h-[58px]  flex relative  bottom-2 uppercase`}
             >
               Local
             </span>
@@ -72,8 +72,8 @@ const Navbar = ({ searchParams }) => {
             <div className="group relative inline-block text-left">
               <div className="bg-[#AFE67F] cursor-pointer w-[44px] h-[44px] rounded-full flex justify-center items-center md:flex max-sm:hidden ">
                 {data?.image
-                  ? <Image src={data?.image} alt="logo" priority fill className="rounded-full" />
-                  : <Image src={user} alt="logo" priority height={20} width={20} sizes="(min-width: 640px) 20px, 12px" />
+                  ? <Image src={data?.image} alt="logo" priority fill className="rounded-full" sizes="(min-width: 640px) 30px, 30px" />
+                  : <Image src={user} alt="logo" sizes="44px" priority height={20} width={20} />
                 }
               </div>
               <div className="origin-top-right w-32 absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -108,7 +108,7 @@ const Navbar = ({ searchParams }) => {
                         width={40}
                         sizes="(min-width: 640px) 20px, 12px"
                       />
-                      <span className="text-[48px] font-bold text-[#1D3208] h-[58px] flex relative bottom-2 uppercase">
+                      <span className="text-[48px] max-md:text-[26px] max-md:h-0 font-bold text-[#1D3208] h-[58px] flex relative bottom-2 uppercase">
                         Local
                       </span>
                     </div>
@@ -119,13 +119,13 @@ const Navbar = ({ searchParams }) => {
                       <div className=" font-extrabold text-[20px] pt-1 border-black  border-solid    bg-[#AFE67F] w-[40px] rounded-full  text-center h-[40px]">X</div>
                     </div>
                   </div>
-                  <ul className="flex flex-col items-center mt-4 gap-7">
+                  <ul className="flex flex-col items-center mt-4 gap-7 max-md:gap-6">
                     {navigationLinks.map((link, index) => (
                       link.condition === undefined || link.condition
                         ? (
                           <li key={index} className="w-full px-24 ">
                             <Link href={link.href}>
-                              <span className={'text-black-600 hover:text-[#5e8b37] text-[36px] font-bold'} onClick={link.href === '/login' ? handleSignout : undefined}>
+                              <span className={'text-black-600 hover:text-[#5e8b37] max-md:text-[25px] text-[36px] font-bold'} onClick={link.href === '/login' ? handleSignout : undefined}>
                                 {link.text}
                               </span>
                             </Link>

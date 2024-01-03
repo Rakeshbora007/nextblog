@@ -82,7 +82,7 @@ const Comments = ({ placeholder, buttons, id }) => {
                             <span className="text-[20px] font-semibold">
                               <span>{e.name}</span>
                             </span>
-                            <span className="text-[16px] text-[#878787]">
+                            <span className="text-[16px] max-sm:text-[12px] text-[#878787]">
                               <Dateformat createdAt={e.createdAt} />
                             </span>
                           </div>
@@ -123,14 +123,14 @@ const Comments = ({ placeholder, buttons, id }) => {
           />
         </form>
         <buttons type="submit" className="bg-[#1D3208] flex w-[186px] items-center justify-center text-[#AFE67F] h-[58px] rounded-lg">Submit</buttons>
-        <div className='text-[18px] mt-[20px] flex gap-[54px]'>
+        {/* <div className='text-[18px] mt-[20px] flex gap-[2%]'>
           <span>Food</span>
           <span>Style</span>
           <span>Travel</span>
           <span>Health</span>
           <span>Travel</span>
           <span>Health</span>
-        </div>
+        </div> */}
       </div>
 
     </div>

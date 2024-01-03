@@ -13,9 +13,9 @@ const Card2 = ({ array }) => {
         <div className=" flex gap-[20px] max-sm:gap-[10px] flex-wrap justify-center  items-center">
           {array.map((e) => (
             <>
-              <Link href={`/blog/${e._id}`} >
+              <Link href={`/blog/${e._id}`} rel="preload">
                 <div className="relative w-[390px] h-[516px] flex flex-wrap max-[800px]:w-[158px] max-[800px]:h-[224px] ">
-                  <Image src={e.image} fill priority className="object-cover rounded-lg" sizes="(min-width: 820px) 390px, 158px" alt="Your Image Alt Text" />
+                  <Image src={e.image} fill priority className="object-cover rounded-lg" sizes="(min-width: 820px) 390px, 158px , (max-width: 780px) 80px, 140px" alt="Your Image Alt Text" />
                   <div className="absolute text-white text-center max-[800px]:p-3 p-10 flex-col flex  h-[516px] max-[800px]:h-[224px] justify-between">
 
                     <div className="flex flex-col gap-10 max-[800px]:gap-4 ">
@@ -23,13 +23,13 @@ const Card2 = ({ array }) => {
                       <div className="flex gap-8 max-[800px]:gap-2 ">
                         <div className="flex gap-4 max-[800px]:gap-1 items-center">
                           <div className="relative w-[16px] h-[16px] max-[800px]:w-[14px] max-[800px]:h-[14px] ">
-                            <Image alt="calender" src={calender} fill />
+                            <Image alt="calender" src={calender} fill sizes="(min-width: 820px) 18px, 14px"/>
                           </div>
                           <span className="max-[800px]:text-[10px]">Nov 1, 2023</span>
                         </div>
                         <div className="flex gap-4  max-[800px]:gap-1 items-center">
                           <div className="relative w-[18px] h-[18px] max-[800px]:w-[14px] max-[800px]:h-[14px] ">
-                            <Image alt="tag" src={tag} fill />
+                            <Image alt="tag" src={tag} fill sizes="(min-width: 820px) 18px, 14px"/>
                           </div>
                           <span className="max-[800px]:text-[10px] ">feature</span>
                         </div>

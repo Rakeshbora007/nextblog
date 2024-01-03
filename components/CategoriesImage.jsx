@@ -1,5 +1,5 @@
 import React from 'react'
-import bg2 from '../images/rec.png'
+import bg2 from '../images/Rec.png'
 import Image from 'next/image'
 
 const CategoriesImage = ({ title, description }) => {

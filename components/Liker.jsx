@@ -20,12 +20,10 @@ const Liker = ({ id }) => {
         }
       })
     })
-
     if (res.ok) {
       console.log('done')
     }
   }
-
   return (
         <div onClick={handleLikes} className="cursor-pointer relative w-[30px] h-[30px] ">
             {Bool === true ? <Image alt="" src={like} fill /> : <Image alt="" src={unlike} fill />}

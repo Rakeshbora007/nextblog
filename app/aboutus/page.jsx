@@ -24,14 +24,14 @@ const AboutUs = async () => {
         <h1 className="w-full sm:w-[100%] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mt-5 sm:mt-10">
           About us
         </h1>
-        <p className="lg:w-[873px] sm:w-[100%] max-sm:w-[330px]   text-center text-base sm:text-lg md:text-xl lg:text-2xl leading-6 sm:leading-8 mt-5 sm:mt-10">
+        <p className="text-[28px] mt-10 max-md:text-[12px] w-[70%]">
           {data[0]?.description}
         </p>
       </div>
       <div className="main flex  max-[1400px]:flex-col">
         <div className="flex-1 flex items-center mt-[120px] max-[1400px]:w-full max-[1400px]:justify-center max-[1400px]:items-center flex-col w-[297px]  gap-7">
-          <div className="relative w-[297px] h-[297px]  ">
-            <Image src={aboutUsData[0]?.image} className="rounded-full" alt="Katie Bolin" fill />
+          <div className="relative w-[297px] h-[297px]  max-md:w-[200px] max-md:h-[200px]">
+            <Image src={aboutUsData[0]?.image} className="rounded-full" alt="Katie Bolin" fill sizes="(min-width: 780px) 297px, 200px" />
           </div>
           <h1 className="w-[297px] font-semibold text-[24px] text-center">
             {aboutUsData[0]?.name}
@@ -40,14 +40,14 @@ const AboutUs = async () => {
         </div>
         <div className="w-[1000px] max-sm:w-full flex flex-col gap-[120px] max-sm:gap-[70px] max-[1400px]:w-[100%]">
           <div
-            className="h-auto  mt-[100px] w-full flex flex-col justify-center"
+            className="h-auto  mt-[100px] max-md:mt-10 w-full flex flex-col justify-center"
             dangerouslySetInnerHTML={{
               __html: data[0]?.content
                 .replace(
                   /<h1/g,
-                  '<h1 id="targetH1" class="text-[30px] font-bold"'
+                  '<h1 id="targetH1" class="text-[30px] max-md:text-[16px] font-bold"'
                 )
-                .replace(/<p/g, '<p class="text-[19px] leading-26"')
+                .replace(/<p/g, '<p class="text-[19px] max-md:text-[14px] leading-26"')
             }}
           ></div>
         </div>
@@ -71,7 +71,7 @@ const AboutUs = async () => {
         <Title heading="Our Blog" />
         <div className="main flex  justify-center flex-col ">
           <div className="flex mt-[70px]  mb-[50px]  gap-[104px] max-lg:w-full max-lg:justify-center max-lg:items-center max-lg:flex-col ">
-            <div className="relative w-[306px] h-[306px]  ">
+            <div className="relative w-[306px] h-[306px] max-md:w-[200px] max-md:h-[200px] ">
               <Image src={authorData[0]?.image} alt="Katie Bolin" fill className="rounded-full" />
             </div>
             <div className="flex-1 flex-col flex gap-10 max-lg:w-full w-[1210px]">
@@ -86,17 +86,17 @@ const AboutUs = async () => {
 
       <div className="main">
         <div
-          className="h-auto  mt-[100px] w-full flex flex-col justify-center"
+          className="h-auto  mt-[100px]  max-md:mt-10  w-full flex flex-col justify-center"
           dangerouslySetInnerHTML={{
             __html: data[0].content1
               .replace(
                 /<h1/g,
                 '<h1 id="targetH1" class="text-[30px] font-bold"'
               )
-              .replace(/<p/g, '<p class="text-[19px] leading-26"')
+              .replace(/<p/g, '<p class="text-[19px] max-md:text-[14px] leading-26"')
           }}
         ></div>
-        <div className="mt-[80px]  max-sm:mt-2 mb-40 gap-10 max-sm:gap-5  flex flex-col">
+        <div className="mt-[80px] max-md:mt-[24px] max-sm:mt-2 mb-40 gap-10 max-sm:gap-5  flex flex-col">
           <h3 className="text-[38px]  font-bold leading-[58px] text-[#1D3208] max-sm:text-[18px] max-sm:w-[100%]  max-sm:leading-[21px]">
             We aim to share our daily content with you and hope it brings value
             to your day.
@@ -132,7 +132,7 @@ const AboutUs = async () => {
 
             <div className="flex-1  max-sm:items-center max-sm:mt-10 max-sm:justify-center text-2xl flex items-end justify-end">
               <div className="max-sm:h-[254px]   max-sm:w-[330px] w-[526px] h-[405px] relative bg-black">
-                <Image src={image} alt="Katie Bolin" width={526} height={405} />
+                <Image src={image} alt="Katie Bolin" width={526} height={405} sizes="(min-width: 780px) 297px, 200px" />
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ const AboutUs = async () => {
           <div className="w-full mt-32  max-sm:mt-5 justify-between flex max-sm:flex-col-reverse">
             <div className="max-sm:flex-1  max-sm:items-center max-sm:mt-10 max-sm:justify-center text-2xl flex items-end justify-end">
               <div className="max-sm:h-[254px]   max-sm:w-[330px] w-[526px] h-[405px] relative bg-black">
-                <Image src={image2} alt="Katie Bolin" width={526} height={405} />
+                <Image src={image2} alt="Katie Bolin" width={526} height={405} sizes="(min-width: 780px) 297px, 200px" />
               </div>
             </div>
 

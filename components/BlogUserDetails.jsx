@@ -14,7 +14,7 @@ const BlogUserDetails = ({ dataID }) => {
   )
   return (
         <div className='flex  justify-center items-center'>
-            <Link href={`/authorDetails/${dataID}`} className="cursor-pointer font-extrabold  text-[20px] hover:text-red-500 capitalize">
+            <Link href={`/authorDetails/${dataID}`} className="cursor-pointer font-bold max-sm:text-[15px] text-[20px] hover:text-red-500 capitalize">
                 <div className='flex flex-row'>
                     <span className='capitalize'>{data?.name.firstname}</span>{' '}
                     <span>{data?.name.lastname}</span> :
