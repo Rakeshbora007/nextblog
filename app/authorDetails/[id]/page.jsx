@@ -6,9 +6,11 @@ import tag from '../../../images/tag2.png'
 import UserDetails from '@components/UserDetails'
 import { getServerSession } from 'next-auth'
 
+const api = process.env.NEXT_PUBLIC_API_URL
+
 const getData = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/posts', {
+    const res = await fetch(`${api}/api/posts`, {
       cache: 'no-store'
     })
     if (!res.ok) {

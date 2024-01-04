@@ -6,15 +6,17 @@ import bg from '../../images/cat.png'
 import CommonCard from '@components/common/commonCard'
 import Title from '@components/common/Title'
 
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
+
+const api = process.env.NEXT_PUBLIC_API_URL
 const getDatas = async () => {
-  const res = await fetch('http://localhost:3000/api/content', {
-    cache: 'no-store'
-  })
+  const res = await fetch(`${api}/api/content`)
   if (!res.ok) { throw Error('failed to fetch data') }
   return res.json()
 }
 
-const AboutUs = async () => {
+const page = async () => {
   const data = await getDatas()
   const aboutUsData = (data[0]?.about.filter((e) => e.main === true))
   const authorData = (data[0]?.about.filter((e) => e.author === true))
@@ -171,4 +173,4 @@ const AboutUs = async () => {
   )
 }
 
-export default AboutUs
+export default page

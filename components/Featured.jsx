@@ -3,8 +3,9 @@ import Link from 'next/link'
 import PostFeatures from './PostFeatures'
 import React from 'react'
 
+const api = process.env.NEXT_PUBLIC_API_URL
 const getData = async () => {
-  const res = await fetch('http://localhost:3000/api/posts?cat', {
+  const res = await fetch(`${api}/api/posts?cat`, {
     cache: 'no-store'
   })
   if (!res.ok) {

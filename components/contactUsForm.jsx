@@ -10,7 +10,7 @@ const ContactUsForm = () => {
     message: ''
   })
 
-  const [status, setStatus] = useState(null) 
+  const [status, setStatus] = useState(null)
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -20,7 +20,7 @@ const ContactUsForm = () => {
   const handleButtonClick = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch('http://localhost:3000/api/contactform', {
+      const response = await fetch('/api/contactform', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

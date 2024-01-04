@@ -10,9 +10,10 @@ const DynamicBundledEditor = dynamic(
     ssr: false
   }
 )
+const api = process.env.NEXT_PUBLIC_API_URL
 
 const getData = async () => {
-  const res = await fetch('http://localhost:3000/api/contactus', {
+  const res = await fetch(`${api}/api/contactus`, {
     cache: 'no-store'
   })
   if (!res.ok) {
@@ -51,10 +52,10 @@ const EditContact = () => {
 
   const handleSubmittion = async () => {
     try {
-      const getResponse = await fetch('http://localhost:3000/api/contactus')
+      const getResponse = await fetch(`${api}/api/contactus`)
       const existingContact = await getResponse.json()
       if (existingContact.length > 0) {
-        const res = await fetch('http://localhost:3000/api/contactus', {
+        const res = await fetch('/api/contactus', {
           method: 'PUT',
           body: JSON.stringify({
             _id: existingContact[0]._id || contactus[0]?.title,
@@ -73,7 +74,7 @@ const EditContact = () => {
           router.push('/contactus')
         }
       } else {
-        const res = await fetch('http://localhost:3000/api/contactus', {
+        const res = await fetch('/api/contactus', {
           method: 'POST',
           body: JSON.stringify({
             title: formData.title || contactus[0]?.title,

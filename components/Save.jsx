@@ -5,8 +5,8 @@ import unsave from '../images/unsave.svg'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
-
-const API_URL = 'http://localhost:3000/api/user/'
+const api = process.env.NEXT_PUBLIC_API_URL
+const API_URL = `${api}/api/user/`
 const Save = ({ posts, postsId }) => {
   const [Bool, setBool] = useState(false)
   const session = useSession()

@@ -10,9 +10,10 @@ const DynamicBundledEditor = dynamic(
     ssr: false
   }
 )
+const api = process.env.NEXT_PUBLIC_API_URL
 
 const getData2 = async () => {
-  const res = await fetch('http://localhost:3000/api/aboutus', {
+  const res = await fetch(`${api}/api/aboutus`, {
     cache: 'no-store'
   })
   if (!res.ok) {
@@ -22,7 +23,7 @@ const getData2 = async () => {
 }
 
 const getDatas = async () => {
-  const res = await fetch('http://localhost:3000/api/content', {
+  const res = await fetch(`${api}/api/content`, {
     cache: 'no-store'
   })
   if (!res.ok) {
@@ -86,7 +87,7 @@ const EditAbout = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmit = async () => {
-    const res = await fetch('http://localhost:3000/api/aboutus', {
+    const res = await fetch('/api/aboutus', {
       method: 'POST',
       body: JSON.stringify({
         image: media,
@@ -100,7 +101,7 @@ const EditAbout = () => {
   }
 
   const handleDescription = async () => {
-    const url = 'http://localhost:3000/api/content'
+    const url = '/api/content'
     const method = All.length > 0 ? 'PUT' : 'POST'
 
     const res = await fetch(url, {
@@ -130,7 +131,7 @@ const EditAbout = () => {
 
   const handleDelete = async (postId) => {
     try {
-      const res = await fetch('http://localhost:3000/api/aboutus', {
+      const res = await fetch('/api/aboutus', {
         method: 'DELETE',
         body: JSON.stringify({
           postId
@@ -149,7 +150,7 @@ const EditAbout = () => {
 
   const handleTeamChange = async (e, checkboxType) => {
     try {
-      const res = await fetch('http://localhost:3000/api/aboutus', {
+      const res = await fetch('/api/aboutus', {
         method: 'POST',
         body: JSON.stringify({
           postId: e._id,

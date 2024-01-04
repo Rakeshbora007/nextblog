@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
 import Dateformat from './Dateformat'
-
+const api = process.env.NEXT_PUBLIC_API_URL
 const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, commentmutate }) => {
   const [Toggle, setToggle] = useState(false)
   const [replys, setReplys] = useState('')
@@ -16,7 +16,7 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
   const [ReplyLike, setReplyLike] = useState(false)
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, mutate } = useSWR(
-    `http://localhost:3000/api/comments/reply/${replyID}`, fetcher
+    `${api}/api/comments/reply/${replyID}`, fetcher
   )
   const handleComments = (e) => {
     setReplys(e.target.value)
@@ -25,7 +25,7 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
   const handleLikeButton = async () => {
     setLike(!Like)
     if (likefor === 'comments') {
-      const res = await fetch(`http://localhost:3000/api/comments/${replyID}`, {
+      const res = await fetch(`/api/comments/${replyID}`, {
         method: 'PUT',
         body: JSON.stringify({
           likecomments: Like,
@@ -42,7 +42,7 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
 
     if (likefor === 'reply') {
       setReplyLike(!ReplyLike)
-      const res = await fetch(`http://localhost:3000/api/comments/reply/${commentID}`, {
+      const res = await fetch(`/api/comments/reply/${commentID}`, {
         method: 'PUT',
         body: JSON.stringify({
           likereply: ReplyLike,
@@ -62,7 +62,7 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
   const handleCommentSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await fetch('http://localhost:3000/api/comments/reply', {
+      const res = await fetch('/api/comments/reply', {
         method: 'POST',
         body: JSON.stringify({
           name: `${session.data.user.name.firstname + session.data.user.name.lastname}`,

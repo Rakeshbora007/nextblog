@@ -1,7 +1,7 @@
 import React from 'react'
 import PostFeatures from './PostFeatures'
 const PickerPostDetails = ({ data, fonttext, categorytext, styles }) => {
-    return (
+  return (
         <div className={`${styles} max-sm:h-[94px]  justify-center gap-6 max-sm:gap-2 flex flex-col`}>
             <div className="w-[380px] max-sm:w-[177px]  flex gap-[18px]">
                 <PostFeatures date={data?.createdAt} image={true} blackcolor={true} />
@@ -14,7 +14,7 @@ const PickerPostDetails = ({ data, fonttext, categorytext, styles }) => {
                 Category : {data.category}
             </h2>
         </div>
-    )
+  )
 }
 
 export default PickerPostDetails

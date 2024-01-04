@@ -1,23 +1,21 @@
 import React from 'react'
 import ContactUsForm from '@components/contactUsForm'
 import LatestPost from '@components/LatestPost'
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
 
+const api = process.env.NEXT_PUBLIC_API_URL
 const getDatas = async () => {
-  const res = await fetch('http://localhost:3000/api/contactus', {
-    cache: 'no-store'
-  })
-  if (!res.ok) {
-    throw Error('failed to fetch data')
-  }
+  const res = await fetch(`${api}/api/contactus`)
+  if (!res.ok) { throw Error('failed to fetch data') }
   return res.json()
 }
 
-const ContactUs = async () => {
+const Newdata = async () => {
   const data = await getDatas()
   const contactUsData = data[0] || ''
-
   return (
-    <>
+    <div>
       <div className="gap-5 h-[650px] max-[1200px]:h-auto mt-[80px] text-center text-[#1D3208] items-center  flex flex-col ">
         <h1 className="w-[1020px] max-sm:w-full max-sm:text-[30px] max-[1200px]:px-[5%] max-[1200px]:w-full text-[96px] font-bold text-start ">
           {contactUsData?.title}
@@ -45,8 +43,8 @@ const ContactUs = async () => {
         <ContactUsForm />
       </div>
       <LatestPost />
-    </>
+    </div>
   )
 }
 
-export default ContactUs
+export default Newdata

@@ -4,7 +4,8 @@ import React from 'react'
 import useSWR from 'swr'
 import SocailIcons from './SocailIcons'
 import Follow from './Follow'
-const API_URL = 'http://localhost:3000/api/user/'
+const api = process.env.NEXT_PUBLIC_API_URL
+const API_URL = `${api}/api/user/`
 
 const BlogUserDetails = ({ dataID }) => {
   const fetcher = (...args) => fetch(...args).then(res => res.json())

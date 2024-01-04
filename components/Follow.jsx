@@ -2,8 +2,8 @@
 import { useSession } from 'next-auth/react'
 import React from 'react'
 import useSWR from 'swr'
-
-const API_URL = 'http://localhost:3000/api/user/'
+const api = process.env.NEXT_PUBLIC_API_URL
+const API_URL = `${api}/api/user/`
 
 const Follow = ({ dataID }) => {
   const { data: sessionData } = useSession()

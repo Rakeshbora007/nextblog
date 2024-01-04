@@ -5,10 +5,10 @@ import useSWR from 'swr'
 import Reply from './Reply'
 import Image from 'next/image'
 import Dateformat from './Dateformat'
-
+const api = process.env.NEXT_PUBLIC_API_URL
 export const postComment = async (endpoint, data) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/comments/${endpoint}`, {
+    const res = await fetch(`/api/comments/${endpoint}`, {
       method: 'POST',
       body: JSON.stringify(data)
     })
@@ -27,7 +27,7 @@ const Comments = ({ placeholder, buttons, id }) => {
   const session = useSession()
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, mutate } = useSWR(
-    `http://localhost:3000/api/comments/${id}`, fetcher
+    `${api}/api/comments/${id}`, fetcher
   )
 
   const handleComments = (e) => {

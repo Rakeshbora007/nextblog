@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-
+const api = process.env.NEXT_PUBLIC_API_URL
 const getData = async (Categories, search) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?cat=${Categories}&search=${search}`,
+    `${api}/posts?cat=${Categories}&search=${search}`,
     {
       cache: 'no-store'
     }

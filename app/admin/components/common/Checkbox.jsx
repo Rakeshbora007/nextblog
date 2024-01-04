@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 const updateFeatureStatusAPI = async (postId, currentStatus, field) => {
   if (field === 'featuredCheck' || field === 'editorPick' || field === 'categoriesCheck' || field === 'healthCheck' || field === 'spotliteCheck') {
     try {
-      const response = await fetch('http://localhost:3000/api/posts', {
+      const response = await fetch('/api/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ const updateFeatureStatusAPI = async (postId, currentStatus, field) => {
 }
 
 const Checkbox = ({ postId, posts, checkfor }) => {
-  // const [, setMessage] = useState('')
+  const [, setMessage] = useState('')
   const [editorPickStatus, setEditorPickStatus] = useState(posts.editorPick)
   const [featuredCheckStatus, setFeaturedCheckStatus] = useState(posts.featuredCheck)
   const [categoriesCheckStatus, setCategoriesCheckStatus] = useState(posts.categoriesCheck)

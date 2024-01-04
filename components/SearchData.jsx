@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-
+const api = process.env.NEXT_PUBLIC_API_URL
 const SearchData = ({ search }) => {
   const [posts, setPosts] = useState([])
 
@@ -11,7 +11,7 @@ const SearchData = ({ search }) => {
     const fetchData = async () => {
       try {
         if (search !== '') {
-          const res = await fetch(`http://localhost:3000/api/posts?search=${search}`, {
+          const res = await fetch(`${api}/api/posts?search=${search}`, {
             cache: 'no-store'
           })
           if (!res.ok) {

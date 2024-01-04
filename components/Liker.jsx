@@ -10,7 +10,7 @@ const Liker = ({ id }) => {
   const [Bool, setBool] = useState(false)
   const handleLikes = async () => {
     setBool(!Bool)
-    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+    const res = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         likeCheck: Bool,

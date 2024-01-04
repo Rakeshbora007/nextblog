@@ -12,7 +12,7 @@ import user from '../images/user.png'
 import menu from '../images/menu.png'
 import SocailIcons from './SocailIcons'
 import SearchInput from './SearchInput'
-
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const Navbar = () => {
   const [show, setShow] = useState(false)
   const session = useSession()
@@ -27,14 +27,12 @@ const Navbar = () => {
     }
   }
   const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data } = useSWR(
-    `http://localhost:3000/api/user/${session?.data?.id}`,
+  const { data } = useSWR(`${api}/api/user/${session?.data?.id}`,
     fetcher,
     {
       dependencies: [session?.data?.id, router]
     }
   )
-
   const urltext = path.split('/').pop()
   const color = ['signup', 'login', 'resetpassword', 'write', 'contactus', 'register', 'settings']
   const imageUrl = color.includes(urltext) ? images2 : images
@@ -44,6 +42,8 @@ const Navbar = () => {
     { href: '/write', text: 'Write a blog' },
     { href: '/contactus', text: 'Contact Us' },
     { href: `/savedPosts/${session?.data?.id}`, text: `${session.status === 'unauthenticated' ? '' : 'Saved Posts'}` },
+    { href: `/authorDetails/${session?.data?.id}`, text: `${session.status === 'unauthenticated' ? '' : 'Profile'}` },
+    { href: '/settings', text: `${session.status === 'unauthenticated' ? '' : 'Settings'}` },
     { href: '/admin', text: `${session?.data?.user?.name?.isAdmin === false || session.status === 'unauthenticated' ? '' : 'Admin Panel'}` },
     { href: '/login', text: session.status === 'unauthenticated' ? 'Login' : 'Log Out', condition: true }
   ]
@@ -61,7 +61,7 @@ const Navbar = () => {
           <div className="flex flex-col">
             <Image src={imageUrl} alt="logo" priority height={40} width={40} />
             <span
-              className={`text-[48px]   max-md:text-[25px] font-bold text-[${color.includes(urltext) ? '#AFE67F' : '#1D3208'
+              className={`text-[48px]  max-md:text-[25px] font-bold text-[${color.includes(urltext) ? '#AFE67F' : '#1D3208'
                 }] h-[58px]  flex relative  bottom-2 uppercase`}
             >
               Local
@@ -75,12 +75,6 @@ const Navbar = () => {
                   ? <Image src={data?.image} alt="logo" priority fill className="rounded-full" sizes="(min-width: 640px) 30px, 30px" />
                   : <Image src={user} alt="logo" sizes="44px" priority height={20} width={20} />
                 }
-              </div>
-              <div className="origin-top-right w-32 absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="py-1">
-                  <Link href="/settings" className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</Link>
-                  <Link href={`/authorDetails/${session?.data?.id}`} className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</Link>
-                </div>
               </div>
             </div>
             <div

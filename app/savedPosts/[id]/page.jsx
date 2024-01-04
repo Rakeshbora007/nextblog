@@ -7,8 +7,8 @@ import tag from '../../../images/tag2.png'
 import Save from '@components/Save'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
-
-const API_URL = 'http://localhost:3000/api/user/'
+const api = process.env.NEXT_PUBLIC_API_URL
+const API_URL = `${api}/api/user/`
 
 const SavedPosts = () => {
   const session = useSession()

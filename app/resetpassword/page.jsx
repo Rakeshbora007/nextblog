@@ -11,7 +11,7 @@ const ResetPassword = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await fetch('http://localhost:3000/api/resetpassword', {
+      const res = await fetch('api/resetpassword', {
         method: 'POST',
         body: JSON.stringify({
           email
