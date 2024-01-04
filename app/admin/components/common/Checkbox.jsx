@@ -28,7 +28,7 @@ const updateFeatureStatusAPI = async (postId, currentStatus, field) => {
 }
 
 const Checkbox = ({ postId, posts, checkfor }) => {
-  const [, setMessage] = useState('')
+  // const [, setMessage] = useState('')
   const [editorPickStatus, setEditorPickStatus] = useState(posts.editorPick)
   const [featuredCheckStatus, setFeaturedCheckStatus] = useState(posts.featuredCheck)
   const [categoriesCheckStatus, setCategoriesCheckStatus] = useState(posts.categoriesCheck)

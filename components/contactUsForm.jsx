@@ -10,7 +10,7 @@ const ContactUsForm = () => {
     message: ''
   })
 
-  const [status, setStatus] = useState(null) // Add status state
+  const [status, setStatus] = useState(null) 
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -55,7 +55,7 @@ const ContactUsForm = () => {
         <div>
             <div className="w-full h-[1019px] max-[1200px]:mt-10 mb-20 bg-[#AFE67F] rounded-2xl">
                 <div className="flex flex-col rounded-md items-center gap-[56px] w-full">
-                    <div className="text-[40px] font-bold mt-7">Contact Us</div>
+                    <div className="text-[40px] max-sm:text-[20px] font-bold mt-7">Contact Us</div>
                     <form className="flex flex-col max-[1200px]:w-full max-[1200px]:px-[3%] gap-8">
                         <div className="flex gap-[16px]">
                             <input

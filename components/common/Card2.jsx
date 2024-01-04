@@ -12,7 +12,7 @@ const Card2 = ({ array }) => {
       <div className="mt-[80px]  mb-20 max-sm:mt-[30px] flex  justify-center flex-col items-center">
         <div className=" flex gap-[20px] max-sm:gap-[10px] flex-wrap justify-center  items-center">
           {array.map((e) => (
-            <>
+            <React.Fragment key={e._id}>
               <Link href={`/blog/${e._id}`} rel="preload">
                 <div className="relative w-[390px] h-[516px] flex flex-wrap max-[800px]:w-[158px] max-[800px]:h-[224px] ">
                   <Image src={e.image} fill priority className="object-cover rounded-lg" sizes="(min-width: 820px) 390px, 158px , (max-width: 780px) 80px, 140px" alt="Your Image Alt Text" />
@@ -23,13 +23,13 @@ const Card2 = ({ array }) => {
                       <div className="flex gap-8 max-[800px]:gap-2 ">
                         <div className="flex gap-4 max-[800px]:gap-1 items-center">
                           <div className="relative w-[16px] h-[16px] max-[800px]:w-[14px] max-[800px]:h-[14px] ">
-                            <Image alt="calender" src={calender} fill sizes="(min-width: 820px) 18px, 14px"/>
+                            <Image alt="calender" src={calender} fill sizes="(min-width: 820px) 18px, 14px" />
                           </div>
                           <span className="max-[800px]:text-[10px]">Nov 1, 2023</span>
                         </div>
                         <div className="flex gap-4  max-[800px]:gap-1 items-center">
                           <div className="relative w-[18px] h-[18px] max-[800px]:w-[14px] max-[800px]:h-[14px] ">
-                            <Image alt="tag" src={tag} fill sizes="(min-width: 820px) 18px, 14px"/>
+                            <Image alt="tag" src={tag} fill sizes="(min-width: 820px) 18px, 14px" />
                           </div>
                           <span className="max-[800px]:text-[10px] ">feature</span>
                         </div>
@@ -41,7 +41,7 @@ const Card2 = ({ array }) => {
                   </div>
                 </div>
               </Link>
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>

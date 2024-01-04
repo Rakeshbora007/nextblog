@@ -1,6 +1,6 @@
 import PickerCard from './common/PickerCard'
 import CommonCard from './common/commonCard'
-// import Card2 from './common/Card2'
+import Card2 from './common/Card2'
 
 const getData = async () => {
   const res = await fetch('http://localhost:3000/api/posts?cat=', {
@@ -16,7 +16,7 @@ const Choices = async () => {
   const { posts } = await getData()
   const categories = posts?.filter((post) => post.categoriesCheck)
   const health = posts?.filter((post) => post.healthCheck)
-  // const spotlight = posts?.filter((post) => post.spotliteCheck)
+  const spotlight = posts?.filter((post) => post.spotliteCheck)
   const top = posts.sort((a, b) => b.count - a.count).slice(0, 4)
   const filteredPosts = posts.filter((post) => post.editorPick)
   return (
@@ -65,7 +65,7 @@ const Choices = async () => {
           />
         }
 
-        {/* <Card2 array={spotlight} /> */}
+        <Card2 array={spotlight} />
       </div>
     </div>
   )

@@ -23,13 +23,13 @@ const CommonCard = ({
         <div className="flex gap-[11px] justify-center flex-wrap items-center">
           {array?.map((e) => (
             <Link
+              key={e._id}
               rel="preload"
               href={
                 Links === 'category'
                   ? `/blogmain?cat=${e.category}`
                   : `/blog/${e._id}`
               }
-              key={e._id}
               className={`${width} relative max-[800px]:w-[188px]  max-sm:w-[140px]  hover:text-[red] mb-5`}
             >
               <div className={`relative ${height} max-[800px]:h-[100px] `}>

@@ -23,7 +23,7 @@ const ContactUs = async () => {
           {contactUsData?.title}
         </h1>
         <div
-          className="h-auto  w-[48%] max-md:w-[90%] flex flex-col justify-start text-start"
+          className="h-auto  w-[52%] max-md:w-[90%] flex flex-col justify-start text-start"
           dangerouslySetInnerHTML={{
             __html: contactUsData?.description
               .replace(
