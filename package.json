@@ -14,7 +14,6 @@
     "@tinymce/tinymce-react": "^4.3.0",
     "bcrypt": "^5.1.1",
     "cloudinary": "^1.41.0",
-    "crypto": "^1.0.1",
     "eslint-config-standard": "^17.1.0",
     "framer-motion": "^10.16.16",
     "git": "^0.1.5",
