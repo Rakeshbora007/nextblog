@@ -19,7 +19,7 @@ export const POST = async (req, res) => {
     const emailOptions = {
       to: email,
       subject: 'Password Reset',
-      text: `Click the following link to reset your password: http://localhost:3000/changepassword/${token}`
+      text: `Click the following link to reset your password: ${process.env.NEXT_PUBLIC_API_URL}/changepassword/${token}`
     }
     await sendEmail(emailOptions)
     return new NextResponse('Password reset email sent successfully', { status: 200 })

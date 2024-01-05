@@ -8,8 +8,8 @@ import Title from '@components/common/Title'
 
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'force-no-store'
-
 const api = process.env.NEXT_PUBLIC_API_URL
+
 const getDatas = async () => {
   const res = await fetch(`${api}/api/content`)
   if (!res.ok) { throw Error('failed to fetch data') }
