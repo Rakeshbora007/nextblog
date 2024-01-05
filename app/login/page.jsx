@@ -54,7 +54,7 @@ const Login = () => {
               }`}
             placeholder="Email address"
           ></input>
-          {errors.username && (
+          {errors?.username && (
             <span className="text-red-500">{errors.username}</span>
           )}
           <input
