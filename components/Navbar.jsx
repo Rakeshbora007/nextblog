@@ -26,6 +26,9 @@ const Navbar = () => {
       router.push('/login')
     }
   }
+  if (session?.data?.id === undefined) {
+    console.log('me')
+  }
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data } = useSWR(`${api}/api/user/${session?.data?.id}`,
     fetcher,
