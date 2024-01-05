@@ -1,5 +1,5 @@
 import NextAuth from 'next-auth'
-import GoogleProvider from 'next-auth/providers/google'
+// import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import User from '@/models/User'
 import connect from '@/utils/db'
@@ -41,11 +41,11 @@ const handler = NextAuth({
           throw new Error(err)
         }
       }
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECREAT
     })
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_ID,
+    //   clientSecret: process.env.GOOGLE_SECREAT
+    // })
   ],
   callbacks: {
     async signIn ({ user }) {
