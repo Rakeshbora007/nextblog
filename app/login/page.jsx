@@ -50,9 +50,8 @@ const Login = () => {
             id="username"
             name="username"
             onChange={handleInputChange}
-            className={`placeholder:text-[#585858] placeholder:text-[14px] max-[950px]:w-full  h-[60px] w-[628px]  px-[39px] rounded-md ${
-              errors ? 'border-red-500 border' : ''
-            }`}
+            className={`placeholder:text-[#585858] placeholder:text-[14px] max-[950px]:w-full  h-[60px] w-[628px]  px-[39px] rounded-md ${errors ? 'border-red-500 border' : ''
+              }`}
             placeholder="Email address"
           ></input>
           {errors.username && (
@@ -64,9 +63,8 @@ const Login = () => {
             type="password"
             placeholder="Enter your password"
             onChange={handleInputChange}
-            className={`placeholder:text-[#585858] max-[950px]:w-full placeholder:text-[14px] h-[60px] w-[628px] px-[39px] rounded-md ${
-              errors ? 'border-red-500 border' : ''
-            }`}
+            className={`placeholder:text-[#585858] max-[950px]:w-full placeholder:text-[14px] h-[60px] w-[628px] px-[39px] rounded-md ${errors ? 'border-red-500 border' : ''
+              }`}
           ></input>
           {errors && <span className="text-red-500">{errors}</span>}
           <div className="flex gap-3 items-center">
