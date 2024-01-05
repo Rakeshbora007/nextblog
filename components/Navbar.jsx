@@ -12,7 +12,7 @@ import user from '../images/user.png'
 import menu from '../images/menu.png'
 import SocailIcons from './SocailIcons'
 import SearchInput from './SearchInput'
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const Navbar = () => {
   const [show, setShow] = useState(false)
   const session = useSession()
@@ -93,7 +93,7 @@ const Navbar = () => {
               >
                 <div className="fixed top-0 right-0 w-full md:w-[29%]   h-screen bg-white">
                   <div className="flex items-center px-24">
-                    <div className="flex flex-col w-full pt-7 mb-20">
+                    <div className="flex flex-col w-full pt-7 mb-10">
                       <Image
                         src={images}
                         alt="logo"
@@ -102,7 +102,7 @@ const Navbar = () => {
                         width={40}
                         sizes="(min-width: 640px) 20px, 12px"
                       />
-                      <span className="text-[48px] max-md:text-[26px] max-md:h-0 font-bold text-[#1D3208] h-[58px] flex relative bottom-2 uppercase">
+                      <span className="text-[40px] max-md:text-[26px] max-md:h-0 font-bold text-[#1D3208] h-[58px] flex relative bottom-2 uppercase">
                         Local
                       </span>
                     </div>
@@ -119,7 +119,7 @@ const Navbar = () => {
                         ? (
                           <li key={index} className="w-full px-24 ">
                             <Link href={link.href}>
-                              <span className={'text-black-600 hover:text-[#5e8b37] max-md:text-[25px] text-[36px] font-bold'} onClick={link.href === '/login' ? handleSignout : undefined}>
+                              <span className={'text-black-600 hover:text-[#5e8b37]  text-[26px] font-bold'} onClick={link.href === '/login' ? handleSignout : undefined}>
                                 {link.text}
                               </span>
                             </Link>

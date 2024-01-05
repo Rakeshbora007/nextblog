@@ -2,7 +2,7 @@ import AuthProvider from '@components/providers/AuthProvider'
 import Navbar from '../components/Navbar'
 import { Partytown } from '@builder.io/partytown/react'
 import '@styles/globals.css'
-// import Footer from '@components/Footer'
+import Footer from '@components/Footer'
 
 export const metadata = {
   title: 'Blogs',
@@ -15,12 +15,12 @@ const RootLayout = ({ children }) => {
       <body>
         <AuthProvider>
           <Partytown debug={true} forward={['dataLayer.push']}></Partytown>
-          <div className="flex flex-col justify-between h-[auto]  ">
+          <div className="flex flex-col">
             <Navbar />
-            <div className="min-h-[100vh] mt-[131px]  max-sm:mt-[50px]">
+            <div className="mt-32 max-sm:mt-[50px]">
               {children}
             </div>
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </AuthProvider>
       </body>

@@ -5,7 +5,7 @@ import useSWR from 'swr'
 import Reply from './Reply'
 import Image from 'next/image'
 import Dateformat from './Dateformat'
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 export const postComment = async (endpoint, data) => {
   try {
     const res = await fetch(`/api/comments/${endpoint}`, {

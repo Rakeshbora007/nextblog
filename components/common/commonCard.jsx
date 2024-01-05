@@ -33,7 +33,7 @@ const CommonCard = ({
               className={`${width} relative max-[800px]:w-[188px]  max-sm:w-[140px]  hover:text-[red] mb-5`}
             >
               <div className={`relative ${height} max-[800px]:h-[100px] `}>
-                <Image alt="" src={e.image} fill className="object-cover rounded-lg " priority sizes="(min-width: 820px) 335px, (min-width: 640px) 188px, 140px" />
+                <Image alt="" src={e.image} fill className="object-cover rounded-lg " priority sizes="(min-width: 820px) 420px, (min-width: 640px) 188px, 140px" />
                 <div
                   className={'hover:bg-black  transition-all cursor-pointer duration-[300ms] opacity-30 rounded-lg absolute top-0 left-0 right-0 bottom-0 m-auto'}
                 ></div>

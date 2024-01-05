@@ -19,7 +19,7 @@ const PickerCard = ({ posts, title, styles, fonttext, categorytext }) => {
                 className="group flex cursor-pointer  max-md:w-[98%] gap-6 max-sm:gap-3 mt-10 max-sm:mt-4"
               >
                 <div className={`relative  max-sm:w-[230px] max-sm:h-[100px] ${styles} rounded-xl group-hover:text-red-500`}>
-                  <Image alt="" className="object-cover rounded-xl" src={e.image} fill priority sizes="(min-width: 660px) 302px, (min-width: 620px) calc(290vw - 1568px), (min-width: 380px) 38.18vw, calc(50vw - 52px)" />
+                  <Image alt="" className="object-cover rounded-xl" src={e.image} fill priority sizes="(min-width: 720px) 302px, (min-width: 640px) calc(66.67vw - 165px), (min-width: 400px) calc(39.09vw - 12px), calc(96.25vw - 231px)" />
                   <div className="absolute top-0 left-0 w-full h-full hover:bg-black opacity-50 rounded-xl"></div>
                 </div>
                 <PickerPostDetails data={e} fonttext={fonttext} categorytext={categorytext} styles={styles} />

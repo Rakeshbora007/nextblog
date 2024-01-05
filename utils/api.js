@@ -1,4 +1,4 @@
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 
 export const fetchData = async (category = '') => {
   const res = await fetch(`${api}/api/posts?cat=${category}`, {

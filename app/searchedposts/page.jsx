@@ -1,7 +1,7 @@
 import PickerCard from '@components/common/PickerCard'
 import Title from '@components/common/Title'
 import React from 'react'
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async (search) => {
   const res = await fetch(`${api}/api/posts?search=${search}`, {
     cache: 'no-store'

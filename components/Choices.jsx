@@ -1,7 +1,7 @@
 import PickerCard from './common/PickerCard'
 import CommonCard from './common/commonCard'
 import Card2 from './common/Card2'
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async () => {
   const res = await fetch(`${api}/api/posts?cat=`, {
     cache: 'no-store'

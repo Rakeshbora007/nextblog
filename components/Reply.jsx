@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
 import Dateformat from './Dateformat'
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, commentmutate }) => {
   const [Toggle, setToggle] = useState(false)
   const [replys, setReplys] = useState('')

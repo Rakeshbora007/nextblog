@@ -1,6 +1,6 @@
 import React from 'react'
 import PickerPostDetails from './PickerPostDetails'
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 
 const getData = async () => {
   const res = await fetch(

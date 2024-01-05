@@ -10,7 +10,7 @@ const DynamicBundledEditor = dynamic(
     ssr: false
   }
 )
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 
 const getData2 = async () => {
   const res = await fetch(`${api}/api/aboutus`, {

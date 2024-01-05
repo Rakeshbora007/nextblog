@@ -8,7 +8,7 @@ import Save from '@components/Save'
 import SocailIcons from '@components/SocailIcons'
 import BlogUserDetails from '@components/BlogUserDetails'
 
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async (id) => {
   const res = await fetch(`${api}/api/posts/${id}`, {
     cache: 'no-store'

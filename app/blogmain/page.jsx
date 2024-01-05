@@ -7,7 +7,7 @@ import { fetchData } from '@utils/api'
 import CommonCard from '@components/common/commonCard'
 import Pagination from '@components/Pagination'
 
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async (Categories, page) => {
   const res = await fetch(`${api}/api/posts?cat=${Categories}&page=${page}`, {
     cache: 'no-store'

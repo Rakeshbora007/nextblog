@@ -4,6 +4,7 @@ import images from '../images/Th.png'
 import add from '../images/add.svg'
 import minus from '../images/minus.svg'
 import Image from 'next/image'
+import SocailIcons from './SocailIcons'
 
 const Footer = () => {
   const [bool, setbool] = useState(false)
@@ -114,7 +115,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex gap-[26px]  text-2xl font-semibold max-sm:mt-[0px] mt-10 w-[223px] h-[44px] text-[#AFE67F] justify-center items-center rounded-full">
-
+                  <SocailIcons color='light' border={false}/>
             </div>
           </div>
           <div className="flex gap-7 relative top-10  flex-col min-[1200px]:hidden">

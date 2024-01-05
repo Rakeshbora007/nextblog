@@ -6,7 +6,7 @@ import tag from '../../../images/tag2.png'
 import UserDetails from '@components/UserDetails'
 import { getServerSession } from 'next-auth'
 
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 
 const getData = async () => {
   try {

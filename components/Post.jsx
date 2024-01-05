@@ -3,7 +3,7 @@ import PostCard from './PostCard'
 
 import PopularCard from './PopularCard'
 import Pagination from './Pagination'
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async (Categories, page) => {
   const res = await fetch(
     `${api}/api/posts?cat=${Categories}&page=${page} `,

@@ -1,6 +1,6 @@
 import React from 'react'
 import CommonCard from './common/commonCard'
-const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async () => {
   const res = await fetch(
     `${api}/api/posts?cat=`,

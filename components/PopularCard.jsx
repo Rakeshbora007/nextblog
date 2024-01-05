@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-const api = process.env.NEXT_PUBLIC_API_URL
+
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async (Categories, search) => {
   const res = await fetch(
     `${api}/posts?cat=${Categories}&search=${search}`,
