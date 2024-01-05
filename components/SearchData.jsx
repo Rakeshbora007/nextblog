@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-const api = process.env.NEXT_PUBLIC_API_URL
+
+const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const SearchData = ({ search }) => {
   const [posts, setPosts] = useState([])
   useEffect(() => {

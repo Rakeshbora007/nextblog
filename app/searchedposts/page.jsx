@@ -3,7 +3,6 @@ import Title from '@components/common/Title'
 import React from 'react'
 const api = process.env.NEXT_PUBLIC_API_URL
 const getData = async (search) => {
-  console.log(search)
   const res = await fetch(`${api}/api/posts?search=${search}`, {
     cache: 'no-store'
   })
