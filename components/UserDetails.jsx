@@ -5,8 +5,8 @@ import useSWR from 'swr'
 import SocailIcons from './SocailIcons'
 import Follow from './Follow'
 
-// const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
-const API_URL = 'http://localhost:3000/api/user/'
+const api = process.env.NEXT_PUBLIC_API_URL
+const API_URL = `${api}/api/user/`
 
 const UserDetails = ({ dataId, postnumbers }) => {
   const fetcher = (...args) => fetch(...args).then(res => res.json())

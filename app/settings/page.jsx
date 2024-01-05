@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
 import { useRouter } from 'next/navigation'
-// const api = process.env.NEXT_PUBLIC_API_URL
+const api = process.env.NEXT_PUBLIC_API_URL
 const Settings = () => {
   const router = useRouter()
   const session = useSession()
@@ -47,7 +47,7 @@ const Settings = () => {
   }
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, mutate } = useSWR(
-        `http://localhost:3000/api/user/${session?.data?.id}`, fetcher
+        `${api}/api/user/${session?.data?.id}`, fetcher
   )
   const handleSubmit = async (e) => {
     e.preventDefault()

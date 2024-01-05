@@ -12,7 +12,7 @@ import user from '../images/user.png'
 import menu from '../images/menu.png'
 import SocailIcons from './SocailIcons'
 import SearchInput from './SearchInput'
-const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
+const api = process.env.NEXT_PUBLIC_API_URL
 const Navbar = () => {
   const [show, setShow] = useState(false)
   const session = useSession()
