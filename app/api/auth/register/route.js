@@ -94,11 +94,26 @@ export const PUT = async (request) => {
         })
       }
     }
-    existingUser.name = name || existingUser.name
+    if (name && typeof name === 'object') {
+      existingUser.name = {
+        ...existingUser.name,
+        isadmin: existingUser.name.isadmin // Retain the existing isadmin value
+      }
+
+      if (name.firstname) existingUser.name.firstname = name.firstname
+      if (name.lastname) existingUser.name.lastname = name.lastname
+      // Add other properties of the name object as needed
+    } else {
+      existingUser.name = existingUser.name || {} // Ensure existingUser.name is an object
+    }
+
+    // Update other fields, retaining existing values if not provided in the request
     existingUser.email = email || existingUser.email
     existingUser.image = image || existingUser.image
     existingUser.socialLinks = socialLinks || existingUser.socialLinks
     existingUser.description = description || existingUser.description
+
+    // Save the updated user
     await existingUser.save()
     return new NextResponse('User has been updated', {
       status: 200
