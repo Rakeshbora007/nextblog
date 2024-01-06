@@ -17,7 +17,7 @@ const RootLayout = ({ children }) => {
           <Partytown debug={true} forward={['dataLayer.push']}></Partytown>
           <div className="flex flex-col">
             <Navbar />
-            <div className="mt-32 max-sm:mt-[50px]">
+            <div className="mt-32 max-sm:mt-[80px]">
               {children}
             </div>
             <Footer />

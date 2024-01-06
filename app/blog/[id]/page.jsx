@@ -36,7 +36,7 @@ const Blogs = async ({ params }) => {
           </div>
         </div>
         <div className="w-full xl:mt-[3pc] max-md:px-2 h-[670px] max-md:h-[300px] relative bg-slate-500  max-md:mt-[2rem] rounded-2xl mb-[130px] max-md:mb-[2rem]">
-          <Image alt="" className="rounded-xl object-cover" src={data.image} fill sizes="(min-width: 1900px) 1760px, 93.29vw (max-width: 700px), 100px" />
+          <Image alt="" className="rounded-xl object-cover" src={data.image} fill sizes="(min-width: 1900px) 1760px, calc(94.94vw - 25px)" />
         </div>
         <BlogContent content={data?.content} />
         <div className="flex max-md:px-2">

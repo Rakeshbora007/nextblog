@@ -162,16 +162,16 @@ const Settings = () => {
                                     </div>
                                 </label>
                             </div>
-                            <div className='w-[50%] flex gap-6'>
-                                <input value={formData.firstname ? formData.firstname : data?.name.firstname} name='firstname' onChange={handleChange} className='capitalize w-[50%] pl-3  h-[50px] rounded-lg' placeholder='First Name' />
-                                <input value={formData.lastname ? formData.lastname : data?.name.lastname} name='lastname' onChange={handleChange} className='capitalize w-[50%] pl-3 h-[50px] rounded-lg' placeholder='Last Name' />
+                            <div className='w-[50%] max-sm:w-[90%] flex gap-6'>
+                                <input value={formData.firstname ? formData.firstname : data?.name.firstname} name='firstname' onChange={handleChange} className='capitalize w-[50%] pl-3 max-sm:w-[90%] h-[50px] rounded-lg' placeholder='First Name' />
+                                <input value={formData.lastname ? formData.lastname : data?.name.lastname} name='lastname' onChange={handleChange} className='capitalize w-[50%] pl-3 max-sm:w-[90%] h-[50px] rounded-lg' placeholder='Last Name' />
                             </div>
-                            <textarea name='description' value={formData.description ? formData.description : data?.description} className='w-[50%] pl-3 pt-3 h-[150px] rounded-lg' placeholder='Description' onChange={handleChange} />
+                            <textarea name='description' value={formData.description ? formData.description : data?.description} className='w-[50%] max-sm:w-[90%] pl-3 pt-3 h-[150px] rounded-lg' placeholder='Description' onChange={handleChange} />
                             <h1 className='text-center text-[18px] font-semibold mt-4'>Social Links</h1>
-                            <input className='w-[50%] pl-3 h-[50px] rounded-lg' value={formData.linkdin ? formData.linkdin : data?.socialLinks?.linkdin} onChange={handleChange} name='linkdin' placeholder='linkdin' />
-                            <input className='w-[50%] pl-3 h-[50px] rounded-lg' value={formData.instagram ? formData.instagram : data?.socialLinks?.instagram} onChange={handleChange} name='instagram' placeholder='instagram' />
-                            <input className='w-[50%] pl-3 h-[50px] rounded-lg' value={formData.twitter ? formData.twitter : data?.socialLinks?.twitter} onChange={handleChange} name='twitter' placeholder='twitter' />
-                            <input className='w-[50%] pl-3 h-[50px] rounded-lg' value={formData.facebook ? formData.facebook : data?.socialLinks?.facebook} onChange={handleChange} name='facebook' placeholder='facebook' />
+                            <input className='w-[50%] pl-3 h-[50px] max-sm:w-[90%] rounded-lg' value={formData.linkdin ? formData.linkdin : data?.socialLinks?.linkdin} onChange={handleChange} name='linkdin' placeholder='linkdin' />
+                            <input className='w-[50%] pl-3 h-[50px] max-sm:w-[90%] rounded-lg' value={formData.instagram ? formData.instagram : data?.socialLinks?.instagram} onChange={handleChange} name='instagram' placeholder='instagram' />
+                            <input className='w-[50%] pl-3 h-[50px] max-sm:w-[90%] rounded-lg' value={formData.twitter ? formData.twitter : data?.socialLinks?.twitter} onChange={handleChange} name='twitter' placeholder='twitter' />
+                            <input className='w-[50%] pl-3 h-[50px] max-sm:w-[90%] rounded-lg' value={formData.facebook ? formData.facebook : data?.socialLinks?.facebook} onChange={handleChange} name='facebook' placeholder='facebook' />
                             <div className='w-full h-10 justify-center flex items-center' >
                                 <button type='submit' className='bg-[#1D3208] w-[170px] h-[40px] text-[#AFE67F] rounded-lg'>Submit</button>
                             </div>

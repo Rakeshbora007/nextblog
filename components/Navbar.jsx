@@ -60,10 +60,10 @@ const Navbar = () => {
             <SocailIcons />
           </div>
           <div className="flex flex-col">
-            <Image src={imageUrl} alt="logo" priority height={40} width={40} />
+            <Image src={imageUrl} alt="logo" priority height={40} width={40} sizes="20px"/>
             <span
               className={`text-[48px]  max-md:text-[25px] font-bold text-[${color.includes(urltext) ? '#AFE67F' : '#1D3208'
-                }] h-[58px]  flex relative  bottom-2 uppercase`}
+                }] h-[58px] max-sm:h-[16px] flex relative  bottom-2 uppercase`}
             >
               Local
             </span>
@@ -114,13 +114,13 @@ const Navbar = () => {
                       <div className=" font-extrabold text-[20px] pt-1 border-black  border-solid    bg-[#AFE67F] w-[40px] rounded-full  text-center h-[40px]">X</div>
                     </div>
                   </div>
-                  <ul className="flex flex-col items-center mt-4 gap-7 max-md:gap-6">
+                  <ul className="flex flex-col items-center mt-4 gap-7 max-md:gap-5">
                     {navigationLinks.map((link, index) => (
                       link.condition === undefined || link.condition
                         ? (
                           <li key={index} className="w-full px-24 ">
                             <Link href={link.href}>
-                              <span className={'text-black-600 hover:text-[#5e8b37]  text-[26px] font-bold'} onClick={link.href === '/login' ? handleSignout : undefined}>
+                              <span className={'text-black-600 hover:text-[#5e8b37]  max-sm:text-[20px] text-[26px] font-bold'} onClick={link.href === '/login' ? handleSignout : undefined}>
                                 {link.text}
                               </span>
                             </Link>

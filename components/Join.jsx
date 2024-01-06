@@ -18,19 +18,19 @@ const Join = () => {
           <div className="max-sm:pl-[20px] gap-5 flex flex-col">
             <div className="flex gap-5">
               <div className="relative w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]">
-                <Image alt="" src={tick} fill priority sizes="(min-width: 640px) 5px, 5px" />
+                <Image alt="" src={tick} fill priority sizes="(min-width: 640px) 24px, 18px" />
               </div>
               <span>Regular Access to Quality Content</span>
             </div>
             <div className="flex gap-5">
               <div className="relative w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]">
-                <Image alt="" src={tick} fill priority sizes="(min-width: 640px) 5px,5px" />
+                <Image alt="" src={tick} fill priority sizes="(min-width: 640px) 24px, 18px" />
               </div>
               <span>Convenience and Delivery</span>
             </div>
             <div className="flex gap-5">
               <div className="relative w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]">
-                <Image alt="" src={tick} fill priority sizes="(min-width: 640px) 5px, 5px" />
+                <Image alt="" src={tick} fill priority sizes="(min-width: 640px) 24px, 18px" />
               </div>
               <span>Enjoy the publication regularly</span>
             </div>
@@ -42,7 +42,7 @@ const Join = () => {
           </div>
         </div>
         <div className="flex items-center  max-[1200px]:w-[300px]  max-[1200px]:h-[270px] relative w-[732px] h-[600px]">
-          <Image alt="" src={footerImage} className='rounded-3xl' fill priority sizes="(min-width: 1220px) 732px, 300px" />
+          <Image alt="" src={footerImage} className='rounded-3xl' fill priority sizes="(min-width: 1920px) 711px, (min-width: 1280px) calc(34.68vw + 52px), (min-width: 1220px) calc(45vw - 30px), 300px" />
         </div>
       </div>
 

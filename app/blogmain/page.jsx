@@ -59,7 +59,7 @@ const SingleBlogPage = async ({ searchParams }) => {
             </div>
               )
             : (
-            <PickerCard posts={posts} title={false} styles='w-[468px] h-[321px]' fonttext='text-[40px]' categorytext={'text-[23px]'}/>
+            <PickerCard posts={posts} title={false} styles='w-[368px] h-[221px]' fonttext='text-[30px]' categorytext={'text-[23px]'}/>
               )}
 
           {page === undefined ? '' : <Pagination page={parseInt(page)} count={totalPosts} />}
