@@ -5,8 +5,9 @@ import Comments from '@components/Comments'
 import Follow from '@components/Follow'
 import Liker from '@components/Liker'
 import Save from '@components/Save'
-import SocailIcons from '@components/SocailIcons'
+// import SocailIcons from '@components/SocailIcons'
 import BlogUserDetails from '@components/BlogUserDetails'
+import SocailIcons from '@components/SocailIcons'
 
 const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async (id) => {
@@ -48,7 +49,8 @@ const Blogs = async ({ params }) => {
                   <span className="border-[2px] max-sm:border-[0px] border-black px-[8px] rounded-full  w-[40px] h-[40px] flex justify-center  items-center">
                     <Liker id={params.id} />
                   </span>
-                  <SocailIcons color='dark'/>
+                  <SocailIcons />
+                  {/* <SocailIcons color='dark' border='border-[2px]  max-sm:border-[0px] border-black px-2 rounded-full  w-[40px] h-[40px] flex justify-center  items-center' /> */}
                   <span className=" border-[2px] max-sm:border-[0px] border-black px-3 rounded-full  w-[40px] h-[40px] flex justify-center  items-center">
                     <div className="relative w-[20px] h-[20px]">
                       <Save posts={data} postsId={data?._id} />
