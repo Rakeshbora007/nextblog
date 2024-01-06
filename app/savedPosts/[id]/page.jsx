@@ -9,7 +9,6 @@ import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
 const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const API_URL = `${api}/api/user/`
-
 const SavedPosts = () => {
   const session = useSession()
   const fetcher = (...args) => fetch(...args).then(res => res.json())
@@ -17,15 +16,12 @@ const SavedPosts = () => {
         `${API_URL}${session.data?.id}`,
         fetcher
   )
-
   const savedData = data?.savedPosts
   return (
-        <>
+        <div className='min-h-screen'>
             {savedData.length !== 0
               ? <div className='main'>
                 <h1 className='text-center text-[40px] font-bold'>Saved Posts</h1>
-                <div>
-                    <div>
                         <div className="mt-[100px]  max-sm:mt-[27px] flex  justify-center flex-col items-center">
                             <div className="flex gap-[100px] justify-center   flex-wrap items-center">
                                 {savedData?.map((e) => (
@@ -66,14 +62,11 @@ const SavedPosts = () => {
                                 ))}
                             </div>
                         </div>
-
-                    </div>
-                </div>
             </div>
               : <div className='main flex justify-center item-center'>
                 <h1 className='text-center text-[40px] font-bold'>No Saved Posts</h1>
             </div>}
-        </>
+        </div>
 
   )
 }
