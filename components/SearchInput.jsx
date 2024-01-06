@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import search from '../images/searchicon.png'
+import search from '@public/searchicon.png'
 import Image from 'next/image'
 import SearchData from './SearchData'
 

@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import like from '../app/assets/icons/heart.svg'
 import reply from '../app/assets/icons/reply.svg'
-import heart from '../images/heatt.png'
+import heart from '@public/heatt.png'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'

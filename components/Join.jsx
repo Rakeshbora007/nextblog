@@ -1,7 +1,7 @@
 import React from 'react'
-import tick from '../images/badge.png'
+import tick from '@public/badge.png'
 import Image from 'next/image'
-import footerImage from '../images/foot.jpg'
+import footerImage from '@public/foot.jpg'
 
 const Join = () => {
   return (

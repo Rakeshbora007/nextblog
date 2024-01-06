@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import image from '../../images/about.png'
-import image2 from '../../images/newabout.png'
-import bg from '../../images/cat.png'
+import image from '@public/about.png'
+import image2 from '@public/newabout.png'
+import bg from '@public/cat.png'
 import CommonCard from '@components/common/commonCard'
 import Title from '@components/common/Title'
 

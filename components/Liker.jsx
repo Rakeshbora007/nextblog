@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
-import like from '../images/like3.svg'
-import unlike from '../images/unlike2.svg'
+import like from '@public/like3.svg'
+import unlike from '@public/unlike2.svg'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 

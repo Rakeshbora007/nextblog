@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import calender from '@images/calander.png'
-import tag from '@images/tag.png'
+import calender from '@public/calander.png'
+import tag from '@public/tag.png'
 import Title from './Title'
 import Link from 'next/link'
 

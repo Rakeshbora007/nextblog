@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
-import images from '../images/Th.png'
-import add from '../images/add.svg'
-import minus from '../images/minus.svg'
+import images from '@public/Th.png'
+import add from '@public/add.svg'
+import minus from '@public/minus.svg'
 import Image from 'next/image'
 import SocailIcons from './SocailIcons'
 

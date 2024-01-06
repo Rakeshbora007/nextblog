@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import profile from '../../images/profile.png'
+import profile from '@public/profile.png'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'

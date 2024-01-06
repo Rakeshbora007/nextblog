@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import calender from '../../../images/calendar2.png'
-import tag from '../../../images/tag2.png'
+import calender from '@public/calendar2.png'
+import tag from '@public/tag2.png'
 import UserDetails from '@components/UserDetails'
 import { getServerSession } from 'next-auth'
 

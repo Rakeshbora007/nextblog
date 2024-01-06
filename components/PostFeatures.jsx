@@ -1,8 +1,8 @@
 import React from 'react'
-import tag from '../images/tagwhite.svg'
-import calendar from '../images/whitecalander.svg'
-import tag2 from '../images/blacktag.svg'
-import calendar2 from '../images/calendarblack.svg'
+import tag from '@public/tagwhite.svg'
+import calendar from '@public/whitecalander.svg'
+import tag2 from '@public/blacktag.svg'
+import calendar2 from '@public/calendarblack.svg'
 import Image from 'next/image'
 import DateFormatter from './DateFormatter'
 
