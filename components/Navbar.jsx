@@ -93,8 +93,8 @@ const Navbar = () => {
                 className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-[45%]"
               >
                 <div className="fixed top-0 right-0 w-full md:w-[29%]   h-screen bg-white">
-                  <div className="flex items-center px-24">
-                    <div className="flex flex-col w-full pt-7 mb-10">
+                  <div className="flex items-center px-12">
+                    <div className="flex flex-col w-full pt-7 mb-5">
                       <Image
                         src={images}
                         alt="logo"
@@ -103,7 +103,7 @@ const Navbar = () => {
                         width={40}
                         sizes="(min-width: 640px) 20px, 12px"
                       />
-                      <span className="text-[40px] max-md:text-[26px] max-md:h-0 font-bold text-[#1D3208] h-[58px] flex relative bottom-2 uppercase">
+                      <span className="text-[29px] max-md:text-[20px] max-md:h-0 font-bold text-[#1D3208] h-[58px] flex relative bottom-2 uppercase">
                         Local
                       </span>
                     </div>
@@ -111,16 +111,16 @@ const Navbar = () => {
                       onClick={() => setShow(!show)}
                       className="h-12 relative bottom-2 flex items-center cursor-pointer"
                     >
-                      <div className=" font-extrabold text-[20px] pt-1 border-black  border-solid    bg-[#AFE67F] w-[40px] rounded-full  text-center h-[40px]">X</div>
+                      <div className="font-extrabold text-[20px] pt-1 border-black  border-solid   bg-[#AFE67F] w-[40px] rounded-full  text-center h-[40px]">X</div>
                     </div>
                   </div>
-                  <ul className="flex flex-col items-center mt-4 gap-7 max-md:gap-5">
+                  <ul className="flex flex-col items-center mt-2 gap-[10px] max-md:gap-5">
                     {navigationLinks.map((link, index) => (
                       link.condition === undefined || link.condition
                         ? (
-                          <li key={index} className="w-full px-24 ">
+                          <li key={index} className="w-full px-12 ">
                             <Link href={link.href}>
-                              <span className={'text-black-600 hover:text-[#5e8b37]  max-sm:text-[20px] text-[26px] font-bold'} onClick={link.href === '/login' ? handleSignout : undefined}>
+                              <span className={'text-black-600 hover:text-[#5e8b37]  max-sm:text-[16spx] text-[26px] font-bold'} onClick={link.href === '/login' ? handleSignout : undefined}>
                                 {link.text}
                               </span>
                             </Link>
