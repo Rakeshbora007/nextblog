@@ -5,11 +5,8 @@ import Comments from '@components/Comments'
 import Follow from '@components/Follow'
 import Liker from '@components/Liker'
 import Save from '@components/Save'
+// import SocailIcons from '@components/SocailIcons'
 import BlogUserDetails from '@components/BlogUserDetails'
-import fb from '../images/fbs.svg'
-import twitts from '../images/twitts.svg'
-import insta from '../images/intashra.svg'
-import linkdin from '../images/linkdin.svg'
 
 const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async (id) => {
@@ -24,7 +21,6 @@ const getData = async (id) => {
 
 const Blogs = async ({ params }) => {
   const data = await getData(params.id)
-  const iconsDarkgreen = [fb, twitts, insta, linkdin]
   return (
     <>
       <div className="main">
@@ -52,16 +48,7 @@ const Blogs = async ({ params }) => {
                   <span className="border-[2px] max-sm:border-[0px] border-black px-[8px] rounded-full  w-[40px] h-[40px] flex justify-center  items-center">
                     <Liker id={params.id} />
                   </span>
-                  <div className={'flex gap-6 max-sm:gap-3'}>
-                    {iconsDarkgreen?.map((e, index) => (
-                      <div key={index} className="border-[2px] max-sm:border-[0px] border-black px-[8px] rounded-full  w-[40px] h-[40px] flex justify-center  items-center">
-                        <div className='relative w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]'>
-                          <Image alt='hgasdjh' src={e} fill priority />
-                        </div>
-
-                      </div>
-                    ))}
-                  </div>
+                  {/* <SocailIcons color='dark' border='border-[2px]  max-sm:border-[0px] border-black px-2 rounded-full  w-[40px] h-[40px] flex justify-center  items-center' /> */}
                   <span className=" border-[2px] max-sm:border-[0px] border-black px-3 rounded-full  w-[40px] h-[40px] flex justify-center  items-center">
                     <div className="relative w-[20px] h-[20px]">
                       <Save posts={data} postsId={data?._id} />
