@@ -96,7 +96,9 @@ const Comments = ({ placeholder, buttons, id }) => {
                           </div>
                         </div>
                         <div className="pl-24 w-full">
-                          <Reply commentmutate={mutate} idmain={id} replyID={e._id} likes={e.likecomments} display={true} likefor={'comments'} />
+                          {session?.status === 'unauthenticated' ? ''
+                            : <Reply commentmutate={mutate} idmain={id} replyID={e._id} likes={e.likecomments} display={true} likefor={'comments'} />
+                          }
                         </div>
                       </div>
                     </div>
@@ -127,14 +129,6 @@ const Comments = ({ placeholder, buttons, id }) => {
               />
             </form>
             <buttons type="submit" className="bg-[#1D3208] flex w-[186px] items-center justify-center text-[#AFE67F] h-[58px] rounded-lg">Submit</buttons>
-            {/* <div className='text-[18px] mt-[20px] flex gap-[2%]'>
-          <span>Food</span>
-          <span>Style</span>
-          <span>Travel</span>
-          <span>Health</span>
-          <span>Travel</span>
-          <span>Health</span>
-        </div> */}
           </div>
         </>
       }
