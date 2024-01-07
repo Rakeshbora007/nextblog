@@ -96,9 +96,7 @@ const Comments = ({ placeholder, buttons, id }) => {
                           </div>
                         </div>
                         <div className="pl-24 w-full">
-                          {session?.status === 'unauthenticated' ? ''
-                            : <Reply commentmutate={mutate} idmain={id} replyID={e._id} likes={e.likecomments} display={true} likefor={'comments'} />
-                          }
+                          <Reply commentmutate={mutate} idmain={id} replyID={e._id} likes={e.likecomments} display={true} likefor={'comments'} />
                         </div>
                       </div>
                     </div>
