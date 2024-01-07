@@ -57,17 +57,23 @@ const Follow = ({ dataID }) => {
   return (
     <div className='flex gap-8 flex-col'>
       <div className="flex  items-center gap-1">
-        {sessionData?.id !== dataID && (
-          <button
-            onClick={handleFollow}
-            className={`w-[186px] h-[58px] max-sm:w-[70px] max-sm:h-[50px]   max-sm:m-0 m-10 rounded-md ${isFollowing
-              ? ' bg-[#AFE67F] text-[#1D3208]'
-              : '  bg-[#1D3208] text-[#AFE67F]'
-              }`}
-          >
-            {isFollowing ? 'Following' : 'Follow'}
-          </button>
-        )}
+        {sessionData?.user.name === undefined
+          ? ''
+          : <>
+            {sessionData?.id !== dataID && (
+              <button
+                onClick={handleFollow}
+                className={`w-[186px] h-[58px] max-sm:w-[70px] max-sm:h-[50px]   max-sm:m-0 m-10 rounded-md ${isFollowing
+                  ? ' bg-[#AFE67F] text-[#1D3208]'
+                  : '  bg-[#1D3208] text-[#AFE67F]'
+                  }`}
+              >
+                {isFollowing ? 'Following' : 'Follow'}
+              </button>
+            )}
+          </>
+        }
+
       </div>
     </div>
   )
