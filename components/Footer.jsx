@@ -4,12 +4,16 @@ import images from '@public/Th.png'
 import add from '@public/add.svg'
 import minus from '@public/minus.svg'
 import Image from 'next/image'
-import SocailIcons from './SocailIcons'
+import fb2 from '../public/fbgreen.svg'
+import twitts2 from '../public/twittergreen.svg'
+import insta2 from '../public/instagreen.svg'
+import linkdin2 from '../public/linkdingreen.svg'
 
 const Footer = () => {
   const [bool, setbool] = useState(false)
   const [bool1, setbool1] = useState(false)
   const [bool2, setbool2] = useState(false)
+  const iconsGreen = [fb2, twitts2, insta2, linkdin2]
   return (
     <footer className="bg-[#1D3208] text-white  ">
       <div className=" mx-auto mt-20   text-[#AFE67F] border-[#AFE67F] flex flex-col ">
@@ -115,7 +119,15 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex gap-[26px]  text-2xl font-semibold max-sm:mt-[0px] mt-10 w-[223px] h-[44px] text-[#AFE67F] justify-center items-center rounded-full">
-                  <SocailIcons color='light' border={false}/>
+              <div className={'flex gap-6 max-sm:gap-3'}>
+                {iconsGreen?.map((e, index) => (
+                  <div key={index} >
+                    <div className='relative w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]'>
+                      <Image alt='hgasdjh' src={e} fill priority />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div className="flex gap-7 relative top-10  flex-col min-[1200px]:hidden">
@@ -133,9 +145,8 @@ const Footer = () => {
                   />
                 </div>
                 <div
-                  className={`${
-                    bool === false ? 'hidden' : 'flex'
-                  } flex-col gap-5  `}
+                  className={`${bool === false ? 'hidden' : 'flex'
+                    } flex-col gap-5  `}
                 >
                   <span className=" flex w-auto max-w-fit hover:border-b hover:border-[#afe67f] hover:text-[#afe67f] transition-transform transform origin-bottom cursor-pointer">
                     Business
@@ -181,9 +192,8 @@ const Footer = () => {
                   />
                 </div>
                 <div
-                  className={`${
-                    bool1 === false ? 'hidden' : 'flex'
-                  } flex-col gap-5  `}
+                  className={`${bool1 === false ? 'hidden' : 'flex'
+                    } flex-col gap-5  `}
                 >
                   <span className=" flex w-auto max-w-fit hover:border-b hover:border-[#afe67f] hover:text-[#afe67f] transition-transform transform origin-bottom cursor-pointer">
                     Marketing
@@ -229,9 +239,8 @@ const Footer = () => {
                   />
                 </div>
                 <div
-                  className={`${
-                    bool2 === false ? 'hidden' : 'flex'
-                  } flex-col gap-5  `}
+                  className={`${bool2 === false ? 'hidden' : 'flex'
+                    } flex-col gap-5  `}
                 >
                   <span className="flex w-auto max-w-fit hover:border-b hover:border-[#afe67f] hover:text-[#afe67f] transition-transform transform origin-bottom cursor-pointer">
                     About us
