@@ -57,10 +57,10 @@ const Navbar = () => {
       <div className="main w-full">
         <div className="flex items-center  justify-between w-full">
           <div className="flex bg-[#AFE67F] w-[223px] max-[600px]:w-[130px]  max-[600px]:h-[30px] max-sm:w-[180px] h-[44px] justify-center items-center rounded-full">
-            <SocailIcons />
+            <SocailIcons border={false} color='dark' />
           </div>
           <div className="flex flex-col">
-            <Image src={imageUrl} alt="logo" priority height={40} width={40} sizes="20px"/>
+            <Image src={imageUrl} alt="logo" priority height={40} width={40} sizes="20px" />
             <span
               className={`text-[48px]  max-md:text-[25px] font-bold text-[${color.includes(urltext) ? '#AFE67F' : '#1D3208'
                 }] h-[58px] max-sm:h-[16px] flex relative  bottom-2 uppercase`}

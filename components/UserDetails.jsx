@@ -43,7 +43,7 @@ const UserDetails = ({ dataId, postnumbers }) => {
                 <span className="font-bold text-[20px]">Follow :</span>
                 <div className="text-xl font-semibold ">
                     <div className="flex gap-[25px]  w-[160px] h-[40px] justify-center items-center rounded-full">
-                        <SocailIcons />
+                        <SocailIcons border={false} color='dark' />
                     </div>
                 </div>
                 <Follow dataID={dataId} />
