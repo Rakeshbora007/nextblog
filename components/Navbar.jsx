@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { signOut, useSession } from 'next-auth/react'
-import { useRouter, usePathname, redirect } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import useSWR from 'swr'
@@ -20,8 +20,8 @@ const Navbar = () => {
   const path = usePathname()
   const handleSignout = () => {
     if (session.status === 'authenticated') {
-      signOut()
-      redirect('/login')
+      signOut({ callbackUrl: '/login' })
+      router.push('/login')
     } else {
       router.push('/login')
     }
