@@ -5,6 +5,12 @@ const nextConfig = {
       {
         protocol: 'http',
         hostname: 'res.cloudinary.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'nextblog-two-tau.vercel.app',
+        port: '',
+        pathname: '/images/**'
       }
     ]
   }
