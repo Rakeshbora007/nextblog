@@ -6,11 +6,8 @@ import Follow from '@components/Follow'
 import Liker from '@components/Liker'
 import Save from '@components/Save'
 import BlogUserDetails from '@components/BlogUserDetails'
-import fb from '../../../public/fbs.svg'
-import twitts from '../../../public/twitts.svg'
-import insta from '../../../public/intashra.svg'
-import linkdin from '../../../public/linkdin.svg'
-const iconsDarkgreen = [fb, twitts, insta, linkdin]
+import UserSocialMedia from '@components/UserSocialMedia'
+
 const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 const getData = async (id) => {
   const res = await fetch(`${api}/api/posts/${id}`, {
@@ -48,23 +45,11 @@ const Blogs = async ({ params }) => {
             <div className="flex justify-start">
               <div className="text-2xl font-bold">
                 <div className="flex gap-[20px] max-sm:gap-[0px] h-[40px] justify-center items-center rounded-full">
-                  <span className="border-[2px] max-sm:border-[0px] border-black px-[8px] rounded-full  w-[40px] h-[40px] flex justify-center  items-center">
+                  <div>
                     <Liker id={params.id} />
-                  </span>
-                  <div className={'flex gap-6 max-sm:gap-3'}>
-                    {iconsDarkgreen?.map((e, index) => (
-                      <div key={index} className="border-[2px] max-sm:border-[0px] border-black px-[8px] rounded-full  w-[40px] h-[40px] flex justify-center  items-center">
-                        <div className='relative w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]'>
-                          <Image alt='hgasdjh' src={e} fill priority />
-                        </div>
-                      </div>
-                    ))}
                   </div>
-                  <span className=" border-[2px] max-sm:border-[0px] border-black px-3 rounded-full  w-[40px] h-[40px] flex justify-center  items-center">
-                    <div className="relative w-[20px] h-[20px]">
-                      <Save posts={data} postsId={data?._id} />
-                    </div>
-                  </span>
+                  <UserSocialMedia dataId={data?.userID} />
+                  <Save posts={data} postsId={data?._id} />
                 </div>
               </div>
             </div>

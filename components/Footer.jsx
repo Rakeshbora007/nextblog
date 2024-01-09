@@ -8,12 +8,14 @@ import fb2 from '../public/fbgreen.svg'
 import twitts2 from '../public/twittergreen.svg'
 import insta2 from '../public/instagreen.svg'
 import linkdin2 from '../public/linkdingreen.svg'
+import Link from 'next/link'
 
 const Footer = () => {
+  const links = { linkdin: 'https://www.linkedin.com/', facebook: 'https://www.facebook.com/', twitter: 'https://twitter.com/i/flow/login', instagram: 'https://www.instagram.com/' }
+  const iconsGreen = [{ icon: fb2, link: links?.facebook }, { icon: twitts2, link: links?.twitter }, { icon: insta2, link: links?.instagram }, { icon: linkdin2, link: links?.linkdin }]
   const [bool, setbool] = useState(false)
   const [bool1, setbool1] = useState(false)
   const [bool2, setbool2] = useState(false)
-  const iconsGreen = [fb2, twitts2, insta2, linkdin2]
   return (
     <footer className="bg-[#1D3208] text-white  ">
       <div className=" mx-auto mt-20   text-[#AFE67F] border-[#AFE67F] flex flex-col ">
@@ -122,8 +124,10 @@ const Footer = () => {
               <div className={'flex gap-6 max-sm:gap-3'}>
                 {iconsGreen?.map((e, index) => (
                   <div key={index} >
-                    <div className='relative w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]'>
-                      <Image alt='hgasdjh' src={e} fill priority />
+                    <div className='relative cursor-pointer w-[24px] h-[24px] max-sm:w-[18px] max-sm:h-[18px]'>
+                      <Link href={`${e.link}`}>
+                        <Image alt='hgasdjh' sizes='80px' src={e.icon} fill priority />
+                      </Link>
                     </div>
                   </div>
                 ))}

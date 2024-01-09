@@ -26,6 +26,7 @@ const SearchInput = () => {
                         src={search}
                         alt="logo"
                         priority
+                        sizes="(min-width: 1560px) 44px, 20px"
                         height={17}
                         width={17}
                     />

@@ -27,6 +27,7 @@ const Navbar = () => {
     }
   }
 
+  const links = { linkdin: 'https://www.linkedin.com/', facebook: 'https://www.facebook.com/', twitter: 'https://twitter.com/i/flow/login', instagram: 'https://www.instagram.com/' }
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data } = useSWR(`${api}/api/user/${session?.data?.id}`,
     fetcher,
@@ -57,10 +58,10 @@ const Navbar = () => {
       <div className="main w-full">
         <div className="flex items-center  justify-between w-full">
           <div className="flex bg-[#AFE67F] w-[223px] max-[600px]:w-[130px]  max-[600px]:h-[30px] max-sm:w-[180px] h-[44px] justify-center items-center rounded-full">
-            <SocailIcons border={false} color='dark' />
+            <SocailIcons links={links} color='dark' />
           </div>
           <div className="flex flex-col">
-            <Image src={imageUrl} alt="logo" priority height={40} width={40} sizes="20px" />
+            <Image src={imageUrl} alt="logo" priority height={40} width={40} sizes="30px" />
             <span
               className={`text-[48px]  max-md:text-[25px] font-bold text-[${color.includes(urltext) ? '#AFE67F' : '#1D3208'
                 }] h-[58px] max-sm:h-[16px] flex relative  bottom-2 uppercase`}
@@ -82,7 +83,7 @@ const Navbar = () => {
               onClick={() => setShow(!show)}
               className="bg-[#AFE67F] w-[44px] max-[600px]:w-[34px]  max-[600px]:h-[34px]  h-[44px] cursor-pointer  rounded-full flex justify-center items-center "
             >
-              <Image src={menu} alt="logo" priority height={20} width={20} />
+              <Image src={menu} alt="logo" sizes="(min-width: 1560px) 44px, 20px" priority height={20} width={20} />
             </div>
             {show && (
               <motion.div
@@ -101,7 +102,7 @@ const Navbar = () => {
                         priority
                         height={40}
                         width={40}
-                        sizes="(min-width: 640px) 20px, 12px"
+                        sizes="(min-width: 640px) 40px, 12px"
                       />
                       <span className="text-[29px] max-md:text-[20px] max-md:h-0 font-bold text-[#1D3208] h-[58px] flex relative bottom-2 uppercase">
                         Local

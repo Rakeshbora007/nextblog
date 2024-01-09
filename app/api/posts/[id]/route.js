@@ -14,20 +14,25 @@ export const GET = async (res) => {
     return new NextResponse('Database Error', { status: 500 })
   }
 }
-
 export const PUT = async (req) => {
   try {
     const id = req.url.split('/').pop()
     const { likers, likeCheck } = await req.json()
     await connect()
-    const updateObject = likeCheck
-      ? { $pull: { likers } }
-      : { $addToSet: { likers } }
-    const post = await Posts.findByIdAndUpdate(id, updateObject
-    )
+
+    const updateObject = {
+      $set: {
+        likeCheck
+      },
+      [likeCheck ? '$addToSet' : '$pull']: { likers }
+    }
+
+    const post = await Posts.findByIdAndUpdate(id, updateObject, { new: true })
+
     if (!post) {
       return new NextResponse('Post not found', { status: 404 })
     }
+
     return new NextResponse(JSON.stringify(post), { status: 200 })
   } catch (error) {
     console.error('Error processing request:', error)

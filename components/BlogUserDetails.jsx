@@ -23,7 +23,7 @@ const BlogUserDetails = ({ dataID }) => {
             </Link>
             <div className="text-xl font-semibold ">
                 <div className="flex gap-[25px] ml-6  w-[160px] h-[40px] justify-center items-center rounded-full">
-                    <SocailIcons border={false} color='dark'/>
+                    <SocailIcons links={data?.socialLinks} color='dark'/>
                 </div>
             </div>
             <Follow dataID={dataID} />
