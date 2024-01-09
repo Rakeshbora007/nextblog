@@ -45,7 +45,7 @@ const Login = () => {
     <div className="main2 h-[100vh] pt-10">
       <div className="bg-[#AFE67F] main flex flex-col rounded-md justify-center items-center gap-[56px] w-[76%]">
         <div className="text-[40px] font-bold mt-7">Log In</div>
-        <div className="flex flex-col max-[950px]:w-full  gap-8">
+        <form onSubmit={handleSubmit} className="flex flex-col max-[950px]:w-full  gap-8">
           <input
             id="username"
             name="username"
@@ -81,7 +81,7 @@ const Login = () => {
               Log in
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   )

@@ -128,7 +128,7 @@ const Comments = ({ placeholder, buttons, id }) => {
                 onChange={handleComments}
               />
             </form>
-            <buttons type="submit" className="bg-[#1D3208] flex w-[186px] items-center justify-center text-[#AFE67F] h-[58px] rounded-lg">Submit</buttons>
+            <button type="submit" onClick={handleCommentSubmit} className="bg-[#1D3208] flex w-[186px] items-center justify-center text-[#AFE67F] h-[58px] rounded-lg">Submit</button>
           </div>
         </>
       }
