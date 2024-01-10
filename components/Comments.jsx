@@ -7,6 +7,7 @@ import Reply from './Reply'
 import Image from 'next/image'
 import Dateformat from './Dateformat'
 import Link from 'next/link'
+
 const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 export const postComment = async (endpoint, data) => {
   try {
@@ -28,8 +29,11 @@ const Comments = ({ placeholder, buttons, id }) => {
   const [comment, setComment] = useState('')
   const session = useSession()
   const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data, mutate } = useSWR(
+  const { data: data1, mutate: mutate1 } = useSWR(
     `${api}/api/comments/${id}`, fetcher
+  )
+  const { data: data2, mutate: mutate2 } = useSWR(
+    `${api}/api/user/${session.data?.id}`, fetcher
   )
 
   const handleComments = (e) => {
@@ -43,9 +47,9 @@ const Comments = ({ placeholder, buttons, id }) => {
     e.preventDefault()
     try {
       const data = {
-        name: `${session.data.user.name.firstname + session.data.user.name.lastname}`,
-        email: session.data.user.email,
-        image: session.data.user.image,
+        name: `${data2?.name.firstname + data2?.name.lastname}`,
+        email: data2?.email,
+        image: data2?.image,
         comment,
         blogId: id
       }
@@ -53,7 +57,8 @@ const Comments = ({ placeholder, buttons, id }) => {
       setComment('')
     } catch (error) {
     }
-    mutate()
+    mutate1()
+    mutate2()
   }
   return (
     <div className="w-[69%] max-lg:w-[100%]">
@@ -64,13 +69,13 @@ const Comments = ({ placeholder, buttons, id }) => {
         <hr className="w-full" />
       </div>
       <div className="gap-7 h-auto  flex flex-col w-full">
-        {data?.length === 0
+        {data1?.length === 0
           ? (
             <div>No comments yet</div>
             )
           : (
             <>
-              {data?.map((e) => (
+              {data1?.map((e) => (
                 <div key={e._id}>
                   <div className="flex my-5 w-full  h-auto " >
                     <div className="flex justify-center h-auto   w-full items-center flex-col ">
@@ -82,7 +87,7 @@ const Comments = ({ placeholder, buttons, id }) => {
                           <div className="flex-col flex  gap-4 w-full h-auto ">
                             <div className="flex items-center h-3  justify-between">
                               <span className="text-[20px] font-semibold">
-                                <span>{e.name}</span>
+                                <span className='lowercase'>{e.name}</span>
                               </span>
                               <span className="text-[16px] max-sm:text-[12px] text-[#878787]">
                                 <Dateformat createdAt={e.createdAt} />
@@ -97,7 +102,7 @@ const Comments = ({ placeholder, buttons, id }) => {
                         </div>
                         <div className="pl-24 w-full">
                           {session?.status === 'unauthenticated' ? ''
-                            : <Reply commentmutate={mutate} idmain={id} replyID={e._id} likes={e.likecomments} display={true} likefor={'comments'} />
+                            : <Reply commentmutate={mutate1} idmain={id} replyID={e._id} likes={e.likecomments} display={true} likefor={'comments'} />
                           }
                         </div>
                       </div>
