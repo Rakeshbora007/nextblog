@@ -15,9 +15,14 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
   const [Like, setLike] = useState(false)
   const [ReplyLike, setReplyLike] = useState(false)
   const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data, mutate } = useSWR(
+
+  const { data: data1, mutate: mutate1 } = useSWR(
     `${api}/api/comments/reply/${replyID}`, fetcher
   )
+  const { data: data2, mutate: mutate2 } = useSWR(
+    `${api}/api/user/${session.data?.id}`, fetcher
+  )
+
   const handleComments = (e) => {
     setReplys(e.target.value)
   }
@@ -38,6 +43,8 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
       if (res.ok) {
         commentmutate()
       }
+
+      mutate2()
     };
 
     if (likefor === 'reply') {
@@ -54,7 +61,7 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
       })
 
       if (res.ok) {
-        mutate()
+        mutate1()
       }
     }
   }
@@ -65,9 +72,9 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
       const res = await fetch('/api/comments/reply', {
         method: 'POST',
         body: JSON.stringify({
-          name: `${session.data.user.name.firstname + session.data.user.name.lastname}`,
-          email: session.data.user.email,
-          image: session.data.user.image,
+          name: `${data2?.name.firstname + data2?.name.lastname}`,
+          email: data2?.email,
+          image: data2?.image,
           comment: replys,
           replyId: replyID
         })
@@ -80,7 +87,7 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
     } catch (error) {
       console.error('Error:', error)
     }
-    mutate()
+    mutate1()
   }
 
   return (
@@ -95,7 +102,7 @@ const Reply = ({ replyID, display, likefor, commentID, likes, checkLike, comment
         {display
           ? <>
             {Toggle && <>
-              {data?.map((e) => (
+              {data1?.map((e) => (
                 <div key={e._id} className="mb-6">
                   <hr className="m-[24px]" />
                   <div className="flex my-5 w-full  h-auto " >
